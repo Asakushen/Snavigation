@@ -89,21 +89,24 @@ function time() {
 fetch('https://restapi.amap.com/v3/ip?key=1764388c1da042251dc76d9c367c4378')
   .then(response => response.json())
   .then(data => {
+    const city = data.city;
     const adcode = data.adcode;
     const weatherInfoURL = `https://restapi.amap.com/v3/weather/weatherInfo?city=${adcode}&key=1764388c1da042251dc76d9c367c4378`;
 
-    return fetch(weatherInfoURL);
-  })
-  .then(response => response.json())
-  .then(data => {
-    const weather = data.lives[0];
-    const weatherText = weather.weather;
-    const temperature = weather.temperature;
+    return fetch(weatherInfoURL)
+      .then(response => response.json())
+      .then(data => {
+        const weather = data.lives[0];
+        const weatherText = `${city} ${weather.weather} ${weather.temperature_float}℃ ${weather.winddirection}风 ${weather.windpower}级`;
+        
+        $('#weather_info').text(weatherText); // 显示组合信息
 
-    $('#wea_text').text(weatherText);
-    $('#tem1').text(temperature);
+        $('#wea_text').text(weather.weather);
+        $('#tem1').text(weather.temperature);
+      });
   })
   .catch(console.error);
+
 
     
 //Tab书签页
