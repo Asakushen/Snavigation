@@ -3,14 +3,15 @@
 一个简约的起始页
 </p>
 
-![Snavigation.png](https://waku.cf/5Q6kB9)
+![Snavigation.png](https://github.com/Asakushen/Snavigation/assets/74193315/562253ac-d49c-499c-86e9-2e78cf9cd136)
+
 
 >尚未完成
 
 ### Demo
 >由于 CDN 缓存原因，查看最新效果可能需要 `Ctrl` + `F5` 强制刷新浏览器缓存
 
-- [Snavigation](https://snavigation.vercel.app/)
+- [Snavigation](https://home.xyz233.cf/)
 
 ### 功能
 
