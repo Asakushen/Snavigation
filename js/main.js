@@ -24,7 +24,7 @@ window.addEventListener('load', function () {
     setTimeout(function () {
         iziToast.show({
             title: hello,
-            message: '欢迎来到 Snavigation'
+            message: '欢迎来到 浅草主页'
         });
     }, 800);
 
@@ -164,7 +164,7 @@ var content = `
 版 本 号：1.1
 更新日期：2022-07-12
 
-Github:  https://github.com/imsyy/Snavigation
+Github:  https://github.com/Asakushen/Snavigation/tree/master
 `
 console.log(`%c${title1} %c${title2}
 %c${content}`, styleTitle1, styleTitle2, styleContent)
