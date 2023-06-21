@@ -90,19 +90,21 @@ fetch('https://restapi.amap.com/v3/ip?key=1764388c1da042251dc76d9c367c4378')
   .then(response => response.json())
   .then(data => {
     const adcode = data.adcode;
-    return fetch(`https://restapi.amap.com/v3/weather/weatherInfo?city=${adcode}&key=1764388c1da042251dc76d9c367c4378`);
-  })
-  .then(response => response.json())
-  .then(data => {
-    const { city, weather, temperature, winddirection, windpower } = data.lives[0];
-    const temperature_float = parseFloat(temperature);
-    const weatherInfo = `${city} ${weather} ${temperature_float}℃ ${winddirection}风${windpower}级`;
-    $('#wea_text').text(city);
-    $('#tem1').text(temperature_float);
-    $('#tem2').text(temperature_float);
-    $('#weather_info').text(weatherInfo);
+    const city = data.city;
+    return fetch(`https://restapi.amap.com/v3/weather/weatherInfo?city=${adcode}&key=1764388c1da042251dc76d9c367c4378`)
+      .then(response => response.json())
+      .then(data => {
+        const { weather, temperature, winddirection, windpower } = data.lives[0];
+        const temperature_float = parseFloat(temperature);
+        const weatherInfo = `${city} ${weather} ${temperature_float}℃ ${winddirection}风${windpower}级`;
+        $('#wea_text').text(city);
+        $('#tem1').text(temperature_float);
+        $('#tem2').text(temperature_float);
+        $('#weather_info').text(weatherInfo);
+      });
   })
   .catch(console.error);
+;
 
 
 
