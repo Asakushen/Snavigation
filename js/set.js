@@ -1,18 +1,3 @@
-/*
-作者:D.Young
-主页：https://yyv.me/
-github：https://github.com/5iux/sou
-日期：2019-07-26
-版权所有，请勿删除
-========================================
-由 yeetime 修改
-github：https://github.com/yeetime/sou2
-日期：2019-12-13
-========================================
-由 imsyy 二次修改
-github：https://github.com/imsyy/sou2
-日期：2022-03-10
-*/
 
 // 默认搜索引擎列表
 var se_list_preinstall = {
@@ -208,7 +193,7 @@ function setBgImg(bg_img) {
 function setBgImgInit() {
     var bg_img = getBgImg();
     $("input[name='wallpaper-type'][value=" + bg_img["type"] + "]").click();
-    if (bg_img["type"] === "5") {
+    if (bg_img["type"] === "6") {
         $("#wallpaper-url").val(bg_img["path"]);
         $("#wallpaper-button").fadeIn(100);
         $("#wallpaper_url").fadeIn(100);
@@ -237,12 +222,15 @@ function setBgImgInit() {
             $('#bg').attr('src', 'https://api.dujin.org/bing/1920.php') //必应每日
             break;
         case "3":
-            $('#bg').attr('src', 'https://api.ixiaowai.cn/gqapi/gqapi.php') //随机风景
+            $('#bg').attr('src', 'hhttps://api.btstu.cn/sjbz/api.php?lx=fengjing&format=images') //随机风景
             break;
         case "4":
-            $('#bg').attr('src', 'https://api.ixiaowai.cn/api/api.php') //随机二次元
+            $('#bg').attr('src', 'https://api.btstu.cn/sjbz/api.php?lx=dongman&format=images') //随机二次元
             break;
         case "5":
+            $('#bg').attr('src', 'https://api.btstu.cn/sjbz/api.php?lx=dongman&format=images') //随机美女
+            break;
+        case "6":
             $('#bg').attr('src', bg_img["path"]) //自定义
             break;
     }
@@ -1095,14 +1083,20 @@ $(document).ready(function () {
         }
 
         if (type === "4") {
-            $('#wallpaper_text').html("显示随机二次元图，每次刷新后更换，刷新页面以生效 | API @ 小歪");
+            $('#wallpaper_text').html("显示随机二次元图，每次刷新后更换，刷新页面以生效");
             setBgImg(bg_img);
             iziToast.show({
                 message: '壁纸设置成功，刷新生效',
             });
         }
-
         if (type === "5") {
+            $('#wallpaper_text').html("显示随机美女图片，每次刷新后更换，刷新页面以生效");
+            setBgImg(bg_img);
+            iziToast.show({
+                message: '壁纸设置成功，刷新生效',
+            });
+        }
+        if (type === "6") {
             $('#wallpaper_text').html("自定义壁纸地址，请输入正确地址，点击保存且刷新页面以生效");
             $("#wallpaper_url").fadeIn(100);
             $("#wallpaper-button").fadeIn(100);
