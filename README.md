@@ -3,7 +3,7 @@
 一个简约的起始页
 </p>
 
-![Snavigation.png](https://gcore.jsdelivr.net/gh/Asakushen/pic/2023/06/22/ca4e39.png)
+![Snavigation.png](https://waku.cf/5Q6kB9)
 
 >尚未完成
 
