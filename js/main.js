@@ -86,15 +86,25 @@ function time() {
 //获取天气
 //每日限量 100 次
 //请前往 https://www.tianqiapi.com/index/doc?version=v6 申请（免费）
-fetch('https://v0.yiketianqi.com/api?unescape=1&version=v61&appid=23935563&appsecret=E9gYeMJp')
-    .then(response => response.json())
-    .then(data => {
-        //$('#wea_text').html(data.wea + '&nbsp;' + data.tem_night + '℃' + '&nbsp;~&nbsp;' + data.tem_day + '℃')
-        $('#wea_text').text(data.wea)
-        $('#tem1').text(data.tem1)
-        $('#tem2').text(data.tem2)
-    })
-    .catch(console.error)
+fetch('https://restapi.amap.com/v3/ip?key=1764388c1da042251dc76d9c367c4378')
+  .then(response => response.json())
+  .then(data => {
+    const adcode = data.adcode;
+    const weatherInfoURL = `https://restapi.amap.com/v3/weather/weatherInfo?city=${adcode}&key=1764388c1da042251dc76d9c367c4378`;
+
+    return fetch(weatherInfoURL);
+  })
+  .then(response => response.json())
+  .then(data => {
+    const weather = data.lives[0];
+    const weatherText = weather.weather;
+    const temperature = weather.temperature;
+
+    $('#wea_text').text(weatherText);
+    $('#tem1').text(temperature);
+  })
+  .catch(console.error);
+
     
 //Tab书签页
 $(function () {
