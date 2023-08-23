@@ -222,10 +222,10 @@ function setBgImgInit() {
             $('#bg').attr('src', 'https://api.dujin.org/bing/1920.php') //必应每日
             break;
         case "3":
-            $('#bg').attr('src', 'hhttps://api.btstu.cn/sjbz/api.php?lx=fengjing&format=images') //随机风景
+            $('#bg').attr('src', 'https://api.aixiaowai.cn/gqapi/gqapi.php') //随机风景
             break;
         case "4":
-            $('#bg').attr('src', 'https://api.btstu.cn/sjbz/api.php?lx=dongman&format=images') //随机二次元
+            $('#bg').attr('src', 'https://api.aixiaowai.cn/api/api.php') //随机二次元
             break;
         case "5":
             $('#bg').attr('src', 'https://api.btstu.cn/sjbz/api.php?lx=meizi&format=images') //随机美女
