@@ -72,16 +72,21 @@ function time() {
     var day = dt.getDay();
     var h = dt.getHours();
     var m = dt.getMinutes();
+    var s = dt.getSeconds(); // 添加获取秒数的代码
     if (h < 10) {
         h = "0" + h;
     }
     if (m < 10) {
         m = "0" + m;
     }
-    $("#time_text").html(h + '<span id="point">:</span>' + m);
+    if (s < 10) {
+        s = "0" + s;
+    }
+    $("#time_text").html(h + '<span id="point">:</span>' + m + '<span id="point">:</span>' + s); // 更新时间显示
     $("#day").html(mm + "&nbsp;月&nbsp;" + d + "&nbsp;日&nbsp;" + weekday[day]);
     t = setTimeout(time, 1000);
 }
+
 
 
 //获取天气
